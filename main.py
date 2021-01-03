@@ -34,5 +34,5 @@ def gradient_optimization_multi_dim(f):
     epsilon = 0.001
     arg = np.array([4,10], dtype=float)
     for i in range(50):
-        arg -= epsilon * np.array(gradient(arg,f))
+        arg -= (epsilon * np.array(gradient(list(arg),f))).round(2)
     return list(arg.round(2))
