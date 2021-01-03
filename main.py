@@ -19,7 +19,7 @@ def gradient(arg, f):
     for i in range(len(arg)):
         grad.append(part_deriv(arg, f, i))
 
-    return np.array(grad)
+    return grad
 
 
 def gradient_optimization_one_dim(f):
@@ -32,7 +32,7 @@ def gradient_optimization_one_dim(f):
 
 def gradient_optimization_multi_dim(f):
     epsilon = 0.001
-    arg = np.array([4,10])
+    arg = np.array([4,10], dtype=float)
     for i in range(50):
-        arg -= epsilon * gradient(arg,f)
+        arg -= epsilon * np.array(gradient(arg,f))
     return arg.round(2)
