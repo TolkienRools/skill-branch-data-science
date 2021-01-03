@@ -26,4 +26,4 @@ def gradient_optimization_one_dim(f):
     x = 10
     for i in range(50):
         x -= epsilon * derivation(x,f)
-    return x
+    return round(x, 2)
