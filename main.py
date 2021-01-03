@@ -30,7 +30,7 @@ def gradient_optimization_one_dim(f):
     return round(x, 2)
 
 
-def gradient_optimization_multi_dim():
+def gradient_optimization_multi_dim(f):
     epsilon = 0.001
     arg = np.array([4,10])
     for i in range(50):
