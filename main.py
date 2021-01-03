@@ -1,14 +1,14 @@
 import copy
 
 def part_deriv(arg, f, index):
-    d_x = 0.0000001
+    d_x = 0.00001
     tmp = copy.copy(arg)
     tmp[index] += d_x
     return round(((f(tmp) - f(arg)) / d_x),2)
 
 
 def derivation(x, f):
-    d_x = 0.0000001
+    d_x = 0.00001
     return round(((f(x + d_x) - f(x)) / d_x),2)
 
 
