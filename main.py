@@ -16,6 +16,6 @@ def gradient(arg, f):
     grad = []
 
     for i in range(len(arg)):
-        grad[i] = part_deriv(arg, f, i)
+        grad.append(part_deriv(arg, f, i))
 
     return grad
