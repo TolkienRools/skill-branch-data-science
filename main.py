@@ -19,3 +19,11 @@ def gradient(arg, f):
         grad.append(part_deriv(arg, f, i))
 
     return grad
+
+
+def gradient_optimization_one_dim(f):
+    epsilon = 0.001
+    x = 10
+    for i in range(50):
+        x -= epsilon * derivation(x,f)
+    return x
