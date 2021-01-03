@@ -1,5 +1,5 @@
 import copy
-import numpy
+import numpy as np
 
 def part_deriv(arg, f, index):
     d_x = 0.00001
@@ -14,12 +14,12 @@ def derivation(x, f):
 
 
 def gradient(arg, f):
-    grad = numpy.array([])
+    grad = []
 
     for i in range(len(arg)):
         grad.append(part_deriv(arg, f, i))
 
-    return grad
+    return np.array(grad)
 
 
 def gradient_optimization_one_dim(f):
@@ -32,7 +32,7 @@ def gradient_optimization_one_dim(f):
 
 def gradient_optimization_multi_dim():
     epsilon = 0.001
-    arg = numpy.array([4,10])
+    arg = np.array([4,10])
     for i in range(50):
         arg -= epsilon * gradient(arg,f)
     return arg.round(2)
