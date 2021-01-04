@@ -16,3 +16,6 @@ def calculate_cheap_apartment(X):
 def calculate_squad_in_cheap_apartment(X):
     return round(df[df['price_doc'] <= 1000000]['full_sq'].mean())
 
+def calculate_mean_price_in_new_housing(X):
+    return round(df[(df['num_room'] == 3) & (df['timestamp'] < '2011-01-01')]['price_doc'].mean())
+
