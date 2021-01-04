@@ -29,13 +29,13 @@ def calculate_mean_price_in_new_housing(X):
 
 #8
 def calculate_mean_squared_by_num_rooms(X):
-    return list(df.groupby(['num_room'])['full_sq'].mean().round(2))
+    return list(X.groupby(['num_room'])['full_sq'].mean().round(2))
 
 #9
 def calculate_squared_stats_by_material(X):
-    return [list(df.groupby(['material'])['full_sq'].max().round(2)), list(df.groupby(['material'])['full_sq'].min().round(2))]
+    return [list(X.groupby(['material'])['full_sq'].max().round(2)), list(X.groupby(['material'])['full_sq'].min().round(2))]
 
 #10
 def calculate_crosstab(X):
-    return df.pivot_table('price_doc', index=('sub_area','product_type')).mean().round(2)
+    return X.pivot_table('price_doc', index=('sub_area','product_type')).mean().round(2)
 
