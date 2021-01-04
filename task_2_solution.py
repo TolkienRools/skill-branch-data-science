@@ -29,7 +29,7 @@ def calculate_mean_price_in_new_housing(X):
 
 #8
 def calculate_mean_squared_by_num_rooms(X):
-    return list(X.groupby(['num_room'])['full_sq'].mean().round(2))
+    return X.groupby(['num_room'])['full_sq'].mean().round(2)
 
 #9
 def calculate_squared_stats_by_material(X):
