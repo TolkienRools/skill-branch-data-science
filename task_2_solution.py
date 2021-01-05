@@ -22,7 +22,7 @@ def calculate_cheap_apartment(X):
 def calculate_squad_in_cheap_apartment(X):
     return round(X[X['price_doc'] <= 1000000]['full_sq'].mean())
 
-#7
+#7 -- 
 def calculate_mean_price_in_new_housing(X):
     return round(X[(X['num_room'] == 3) & (X['timestamp'] < '2011-01-01')]['price_doc'].mean())
 
@@ -31,11 +31,11 @@ def calculate_mean_price_in_new_housing(X):
 def calculate_mean_squared_by_num_rooms(X):
     return X.groupby(['num_room'])['full_sq'].mean().round(2)
 
-#9
+#9 -- 
 def calculate_squared_stats_by_material(X):
     return [list(X.groupby(['material'])['full_sq'].max().round(2)), list(X.groupby(['material'])['full_sq'].min().round(2))]
 
-#10
+#10 -- 
 def calculate_crosstab(X):
-    return X.pivot_table('price_doc', index=('sub_area','product_type')).mean().round(2)
+    return X.pivot_table('price_doc', index=('product_type', 'sub_area')).round(2)
 
