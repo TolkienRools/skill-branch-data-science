@@ -33,7 +33,7 @@ def calculate_mean_squared_by_num_rooms(X):
 
 #9 -- 
 def calculate_squared_stats_by_material(X):
-    return [list(X.groupby(['material'])['full_sq'].max().round(2)), list(X.groupby(['material'])['full_sq'].min().round(2))]
+    return X.pivot_table('full_sq', index=('material'), aggfunc=['max', 'min']).round(2)
 
 #10 -- 
 def calculate_crosstab(X):
