@@ -37,5 +37,5 @@ def calculate_squared_stats_by_material(X):
 
 #10 -- 
 def calculate_crosstab(X):
-    return X.pivot_table('price_doc', index=('product_type', 'sub_area')).round(2)
+    return X.pivot_table('price_doc', index=('sub_area'), columns=['product_type'], fill_value=0).round(2)
 
