@@ -1,3 +1,5 @@
+import numpy as np
+
 #1
 def calculate_data_shape(X):
     return X.shape
