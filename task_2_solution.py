@@ -26,7 +26,7 @@ def calculate_squad_in_cheap_apartment(X):
 
 #7 -- 
 def calculate_mean_price_in_new_housing(X):
-    return int(X[(X['num_room'] == 3) & (X['build_year'] >= 2010)]['price_doc'].mean())
+    return round(X[(X['num_room'] == 3) & (X['build_year'] >= 2010)]['price_doc'].mean())
 
 
 #8
