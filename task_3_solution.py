@@ -1,5 +1,4 @@
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 
 #1
 def split_data_into_two_samples(X):
