@@ -14,7 +14,7 @@ def prepare_data(X):
 
 #3
 def scale_data(X, transformer):
-    scaler = transformer()
+    scaler = transformer
     return scaler.fit_transform(X)
 
 #4
