@@ -13,10 +13,10 @@ def prepare_data(X):
     key_feature = X.pop('price_doc')
     return X, key_feature
 
-#3
-def scale_data(X, transformer):
-    scaler = transformer
-    return scaler.fit_transform(X)
+# #3
+# def scale_data(X, transformer):
+#     scaler = transformer
+#     return scaler.fit_transform(X)
 
 # #4
 # def prepare_data_for_model(X, transformer):
