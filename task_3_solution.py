@@ -54,10 +54,10 @@ def evaluate_model(model, x_pred, y_true):
 
 #8
 def calculate_model_weights(model, features):
-    df = pd.DataFrame(
-        'features':features,
+    df = pd.DataFrame({
+        'features': features,
         'weights': model.coef_
-    )
+    })
     
     df.sort_values(by=["weights"])
 
