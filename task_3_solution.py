@@ -46,7 +46,7 @@ def fit_first_linear_model_2(x_train, y_train):
 
 #7
 def evaluate_model(linreg, x_pred, y_true):
-    y_pred = linreg.predict(x_test)
+    y_pred = linreg.predict(x_pred)
     mse = mean_squared_error(y_test, y_pred)
     mae = mean_absolute_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
