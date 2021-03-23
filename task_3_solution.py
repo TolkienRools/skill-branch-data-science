@@ -10,7 +10,7 @@ def prepare_data(x):
 
     objects = x.select_dtypes(include=['object']).columns
 
-    filter_x = x.drop(column=['id']).drop(column=['price_doc']).dropna(axis=1)
+    filter_x = x.drop(columns=['id']).drop(columns=['price_doc']).dropna(axis=1)
     
     return [filter_x, key_feature]
 
