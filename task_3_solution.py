@@ -26,7 +26,7 @@ def scale_data(x, transformer):
 #4
 def prepare_data_for_model(x, transformer):
     x_train, y_train = prepare_data(x)
-    scaled_x = scale_data(filtered_x, transformer)
+    scaled_x = scale_data(x_train, transformer)
     x_train_scaled = pd.DataFrame(scaled_x, columns=x_train.columns)
     return [x_train_scaled, y_train]
 
