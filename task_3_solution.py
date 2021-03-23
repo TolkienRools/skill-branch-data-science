@@ -1,4 +1,12 @@
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import r2_score
+import pandas as pd
+
 
 #1
 def split_data_into_two_samples(x):
@@ -14,6 +22,48 @@ def prepare_data(x):
 #3
 def scale_data(x, transformer):
     return transformer.fit_transform(x)
+
+#4
+def prepare_data_for_model(x, transformer):
+    x_train, y_train = prepare_data(x)
+    scaled_x = scale_data(filtered_x, transformer)
+    x_train_scaled = pd.DataFrame(scaled_x, columns=x_train.columns)
+    return [x_train_scaled, y_train]
+
+#5
+def fit_first_linear_model(x_train, y_train):
+    x_train_s = scale_data(x_train, StandardScaler())
+    clr = LinearRegression()
+    clr.fit(x_train_s, y_train)
+    return clr
+
+#6
+def fit_first_linear_model_2(x_train, y_train):
+    x_train_s = scale_data(x_train, MinMaxScaler())
+    clr = LinearRegression()
+    clr.fit(x_train_s, y_train)
+    return clr
+
+#7
+def evaluate_model(model, x_pred, y_true):
+    y_pred = model.predict(x_pred)
+    mse = mean_squared_error(y_true, y_pred).round(2)
+    mae = mean_absolute_error(y_true, y_pred).round(2)
+    r2 = r2_score(y_true, y_pred).round(2)
+    return [mse, mae, r2]
+
+#8
+def calculate_model_weights(model, features):
+    df = pd.DataFrame(
+        'features':features,
+        'weights': model.coef_
+    )
+    
+    df.sort_values(by=["weights"])
+
+    return df
+
+
 
 
 
